@@ -1,4 +1,4 @@
-package com.dev.sa.data.request.data.model;
+package com.dev.sa.data.model;
 
 
 import com.dev.sa.data.request.Request;

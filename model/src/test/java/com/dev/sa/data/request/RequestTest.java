@@ -1,7 +1,6 @@
 package com.dev.sa.data.request;
 
-import com.dev.sa.data.request.Request;
-import com.dev.sa.data.request.data.model.Employee;
+import com.dev.sa.data.model.Employee;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
 

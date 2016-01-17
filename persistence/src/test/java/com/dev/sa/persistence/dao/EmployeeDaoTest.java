@@ -1,6 +1,6 @@
 package com.dev.sa.persistence.dao;
 
-import com.dev.sa.data.request.data.model.Employee;
+import com.dev.sa.data.model.Employee;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

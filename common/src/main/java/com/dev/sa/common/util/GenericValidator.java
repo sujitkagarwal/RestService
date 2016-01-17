@@ -1,5 +1,7 @@
 package com.dev.sa.common.util;
 
+import com.dev.sa.common.exception.ServiceException;
+
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
@@ -23,7 +25,7 @@ public class GenericValidator<T> {
         //System.out.println("Validation Request3");
         if (!violations.isEmpty()) {
             System.out.println("Validation Request if block");
-        throw new Exception(String.format(validationMessage,violations.iterator().next().getMessage()));
+        throw new ServiceException(String.format(validationMessage,violations.iterator().next().getMessage()));
         }
         //System.out.println("Validation Request4");
     }

@@ -1,5 +1,5 @@
 package com.dev.sa.data.request;
-import com.dev.sa.data.request.data.model.Employee;
+import com.dev.sa.data.model.Employee;
 import org.codehaus.jackson.annotate.JsonSubTypes;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 

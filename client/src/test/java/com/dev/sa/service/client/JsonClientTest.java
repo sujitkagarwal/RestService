@@ -1,6 +1,6 @@
 package com.dev.sa.service.client;
 
-import com.dev.sa.data.request.data.model.Employee;
+import com.dev.sa.data.model.Employee;
 import com.dev.sa.data.response.Response;
 import org.junit.Assert;
 import org.junit.Before;
