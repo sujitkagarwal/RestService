@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:jersey="http://www.mulesoft.org/schema/mule/jersey"
+	xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+	http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
+	http://www.mulesoft.org/schema/mule/jersey http://www.mulesoft.org/schema/mule/jersey/current/mule-jersey.xsd">
+
+
+	<spring:beans>
+		<spring:import resource="classpath:persistance-spring.xml" />
+		<spring:bean id="Services"  class="com.dev.sa.services.Services" />
+		<spring:bean id="performImpl" class="com.dev.sa.operation.impl.PerformImpl">
+			<spring:property name="employeeDao" ref="employee"/>
+		</spring:bean>
+		<spring:bean id="genericValidator" class="com.dev.sa.common.util.GenericValidator" />
+	</spring:beans>
+
+    <vm:connector name="vmConnector"  doc:name="VM" validateConnections="true">
+    <receiver-threading-profile maxThreadsIdle="10" maxThreadsActive="50"/>
+	<dispatcher-threading-profile   maxBufferSize="5000" maxThreadsActive="50"/>		
+	</vm:connector>
+	<flow doc:name="jerseryRestFlow" name="jerseryRestFlow">
+		<inbound-endpoint exchange-pattern="request-response"
+			address="servlet://execution" doc:name="Generic" />
+		<jersey:resources doc:name="REST">
+			<component>
+				<spring-object bean="Services" />
+				 <binding interface="com.dev.sa.operation.Perform" method="peformOpertaion">
+					<vm:outbound-endpoint path="peformOpertaionIn"
+						exchange-pattern="request-response" />
+				</binding>
+			</component>
+			<jersey:exception-mapper class="com.dev.sa.common.exception.ServiceExceptionMapper"/>
+			 <!--<component doc:name="testResponse">
+				<spring-object bean="response"></spring-object>
+			</component>-->
+		</jersey:resources>
+	</flow>
+	<flow name="peformOpertaion" doc:name="peformOpertaion">
+		<vm:inbound-endpoint exchange-pattern="request-response"
+			path="peformOpertaionIn" doc:name="peformOpertaionIn" />
+		<component doc:name="validator">
+			<spring-object bean="genericValidator"></spring-object>
+		</component>
+		<component doc:name="performImpl">
+			<spring-object bean="performImpl"></spring-object>
+		</component>
+	</flow>
+</mule>
