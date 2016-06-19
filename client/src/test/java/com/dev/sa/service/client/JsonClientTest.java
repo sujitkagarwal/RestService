@@ -4,6 +4,7 @@ import com.dev.sa.data.model.Employee;
 import com.dev.sa.data.response.Response;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Date;
@@ -24,7 +25,7 @@ public class JsonClientTest {
     try {
 
         Employee employee=new Employee((int) (Math.random()*10),"sujit agarwal",33,"214-729-0647",new Date());
-        Response res= jsonClient.execute("http://localhost:8080/Service/services/execution/generic/perform", employee);
+        Response res= jsonClient.execute("http://localhost:8080/service/services/execution/generic/perform", employee);
         System.out.println("response::: "+res.getStatus());
         System.out.println("response::: "+res.getResponse());
     }

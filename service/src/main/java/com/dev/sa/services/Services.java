@@ -22,7 +22,7 @@ public class Services {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response perform(final Request req) throws Exception{
-       // System.out.println("in request"+(String)req.getRequest());
+        System.out.println("in request"+(String)req.getTransactionId());
        // return Response.status(200).entity("Testing").build();
        return perform.peformOpertaion(req);
     }

@@ -17,10 +17,10 @@ public abstract class Request implements Serializable{
     private String transactionId;
     public String getTransactionId() {
 
-        if (transactionId==null)
+       /* if (transactionId==null)
         {
             transactionId= UUID.randomUUID().toString();
-        }
+        }*/
         return transactionId;
     }
     public void setTransactionId(String transactionId) {

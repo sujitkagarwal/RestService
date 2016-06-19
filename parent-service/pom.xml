@@ -14,11 +14,12 @@
         <slf4j.version>1.6.1</slf4j.version>
         <test.hsql.port>6160</test.hsql.port>
         <test.tomact.port>20001</test.tomact.port>
+        <cucumber-version>1.2.0</cucumber-version>
     </properties>
     <build>
         <directory>target</directory>
         <outputDirectory>target/classes</outputDirectory>
-        <finalName>${name}-${version}</finalName>
+        <finalName>${project.name}-${version}</finalName>
         <testOutputDirectory>target/test-classes</testOutputDirectory>
         <sourceDirectory>src/main/java</sourceDirectory>
         <scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
@@ -154,11 +155,12 @@
         </dependency>
     </dependencies>
     <modules>
-        <module>../Model</module>
-        <module>../Common</module>
-        <module>../Persistence</module>
-        <module>../Service</module>
-        <module>../cucumber-service</module>
+        <module>../model</module>
+        <module>../common</module>
+        <module>../persistence</module>
+        <module>../service</module>
+      <!--  <module>../cucumber-service</module>-->
         <module>../client</module>
+        <module>../Testing</module>
     </modules>
 </project>
