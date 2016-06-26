@@ -9,30 +9,34 @@
 
     <!-- Loads the properties into the Spring Context and uses them to fill
       in placeholders in the bean definitions -->
+    <!--<beans profile="!embeded">
     <context:property-placeholder location="classpath:cassandra.properties" />
 
-    <!-- REQUIRED: The Cassandra Cluster -->
+    &lt;!&ndash; REQUIRED: The Cassandra Cluster &ndash;&gt;
     <cassandra:cluster contact-points="${cassandra.contactpoints}"
                        port="${cassandra.port}" />
 
-    <!-- REQUIRED: The Cassandra Session, built from the Cluster, and attaching
-      to a keyspace -->
+    &lt;!&ndash; REQUIRED: The Cassandra Session, built from the Cluster, and attaching
+      to a keyspace &ndash;&gt;
     <cassandra:session keyspace-name="${cassandra.keyspace}" />
 
-    <!-- REQUIRED: The Default Cassandra Mapping Context used by CassandraConverter -->
+    &lt;!&ndash; REQUIRED: The Default Cassandra Mapping Context used by CassandraConverter &ndash;&gt;
     <cassandra:mapping />
 
-    <!-- REQUIRED: The Default Cassandra Converter used by CassandraTemplate -->
+    &lt;!&ndash; REQUIRED: The Default Cassandra Converter used by CassandraTemplate &ndash;&gt;
     <cassandra:converter />
 
-    <!-- REQUIRED: The Cassandra Template is the building block of all Spring
-      Data Cassandra -->
+    &lt;!&ndash; REQUIRED: The Cassandra Template is the building block of all Spring
+      Data Cassandra &ndash;&gt;
     <cassandra:template id="cassandraTemplate" />
 
-    <!-- OPTIONAL: If you are using Spring Data Cassandra Repositories, add
-      your base packages to scan here -->
+    &lt;!&ndash; OPTIONAL: If you are using Spring Data Cassandra Repositories, add
+      your base packages to scan here &ndash;&gt;
     <cassandra:repositories base-package="com.dev.persistence" />
     <bean id="employee" class="com.dev.sa.persistence.dao.impl.EmployeeDaoImpl">
         <property name="cassandraTemplate" ref="cassandraTemplate"/>
     </bean>
-</beans>
+
+   </beans>
+   -->
+ </beans>

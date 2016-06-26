@@ -69,10 +69,10 @@
                         <contextPath>/service</contextPath>
                         <artifactId>service</artifactId>
                         <groupId>com.dev.sa</groupId>
-                        <version>${project.version}</version>
+                        <version>${version}</version>
+                        <asWebapp>true</asWebapp>
                         <type>war</type>
-                         <asWebapp>true</asWebapp>
-                    </webapp>
+                       </webapp>
                </webapps>
                 </configuration>
                 <executions>
@@ -99,6 +99,7 @@
             <artifactId>service</artifactId>
             <groupId>com.dev.sa</groupId>
             <version>${version}</version>
+            <type>war</type>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>

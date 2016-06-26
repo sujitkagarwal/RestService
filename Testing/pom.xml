@@ -10,7 +10,10 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>Testing</artifactId>
     <name>Testing</name>
-    <packaging>jar</packaging>
+    <modules>
+        <module>../fitness-integration-test</module>
+    </modules>
+    <packaging>pom</packaging>
     <dependencies>
     <dependency>
         <groupId>com.netflix.hystrix</groupId>

@@ -19,7 +19,8 @@ public class JsonClientTest {
     {
          jsonClient = new JsonClient();
     }
-    @Test
+
+    @Ignore
     public void execute()
     {
     try {

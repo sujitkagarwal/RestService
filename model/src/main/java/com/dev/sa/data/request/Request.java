@@ -3,6 +3,7 @@ import com.dev.sa.data.model.Employee;
 import org.codehaus.jackson.annotate.JsonSubTypes;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 
+import java.beans.Transient;
 import java.io.Serializable;
 import java.util.UUID;
 
@@ -15,12 +16,13 @@ public abstract class Request implements Serializable{
     //@NotNull(message ="Request object cannot be null")
 
     private String transactionId;
+    @Transient
     public String getTransactionId() {
 
-       /* if (transactionId==null)
+        if (transactionId==null)
         {
             transactionId= UUID.randomUUID().toString();
-        }*/
+        }
         return transactionId;
     }
     public void setTransactionId(String transactionId) {

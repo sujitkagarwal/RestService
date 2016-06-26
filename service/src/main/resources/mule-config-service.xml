@@ -34,7 +34,7 @@
 						exchange-pattern="request-response" />
 				</binding>
 			</component>
-			<jersey:exception-mapper class="com.dev.sa.common.exception.ServiceExceptionMapper"/>
+			<jersey:exception-mapper class="com.dev.sa.exception.ServiceExceptionMapper"/>
 			 <!--<component doc:name="testResponse">
 				<spring-object bean="response"></spring-object>
 			</component>-->

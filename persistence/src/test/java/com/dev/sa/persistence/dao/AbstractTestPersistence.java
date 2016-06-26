@@ -1,9 +1,12 @@
 package com.dev.sa.persistence.dao;
 
+import com.dev.sa.common.config.AppConfig;
+import com.dev.sa.common.config.CassandraConfig;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -11,16 +14,21 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 
 public class AbstractTestPersistence {
-    public static ApplicationContext ctx;
+    public static AnnotationConfigApplicationContext ctx;
     @BeforeClass
     public static void setup()
     {
-    ctx=new ClassPathXmlApplicationContext("persistance-spring.xml");
+    ctx=new AnnotationConfigApplicationContext("com.dev.sa");
+       /*// ctx.register(AppConfig.class);
+         ctx.register(CassandraConfig.class);
+        ctx.refresh();*/
     }
 
     @AfterClass
     public static void tearDown()
     {
-        ((ClassPathXmlApplicationContext)ctx).close();
+        ((AnnotationConfigApplicationContext)ctx).close();
     }
 }
+
+
