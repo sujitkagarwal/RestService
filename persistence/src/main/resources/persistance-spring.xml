@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cassandra="http://www.springframework.org/schema/data/cassandra" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/cql http://www.springframework.org/schema/cql/spring-cql-1.0.xsd
+    http://www.springframework.org/schema/data/cassandra http://www.springframework.org/schema/data/cassandra/spring-cassandra-1.0.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+  <!--  <context:component-scan base-package="com.dev.sa.common"/>
+   <context:component-scan base-package="com.dev.sa.persistence"/>
+   <context:component-scan base-package="com.dev.sa.data"/>
+-->  <!--  <context:property-placeholder location="classpath:cassandra.properties" />
+
+    &lt;!&ndash; REQUIRED: The Cassandra Cluster &ndash;&gt;
+    <cassandra:cluster contact-points="${cassandra.contactpoints}"
+                       port="${cassandra.port}" />
+
+    &lt;!&ndash; REQUIRED: The Cassandra Session, built from the Cluster, and attaching
+      to a keyspace &ndash;&gt;
+    <cassandra:session keyspace-name="${cassandra.keyspace}" />
+
+    &lt;!&ndash; REQUIRED: The Default Cassandra Mapping Context used by CassandraConverter &ndash;&gt;
+    <cassandra:mapping />
+
+    &lt;!&ndash; REQUIRED: The Default Cassandra Converter used by CassandraTemplate &ndash;&gt;
+    <cassandra:converter />
+
+    &lt;!&ndash; REQUIRED: The Cassandra Template is the building block of all Spring
+      Data Cassandra &ndash;&gt;
+    <cassandra:template id="cassandraTemplate" />
+
+    &lt;!&ndash; OPTIONAL: If you are using Spring Data Cassandra Repositories, add
+      your base packages to scan here &ndash;&gt;
+    <cassandra:repositories base-package="com.dev.persistence" />
+    <bean id="employee" class="com.dev.sa.persistence.dao.impl.EmployeeDaoImpl">
+        <property name="cassandraOperations" ref="cassandraTemplate"/>
+    </bean>-->
+</beans>
