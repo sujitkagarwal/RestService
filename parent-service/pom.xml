@@ -28,7 +28,7 @@
     <build>
         <directory>target</directory>
         <outputDirectory>target/classes</outputDirectory>
-        <finalName>${project.name}-${version}</finalName>
+        <finalName>${project.name}-${project.version}</finalName>
         <testOutputDirectory>target/test-classes</testOutputDirectory>
         <sourceDirectory>src/main/java</sourceDirectory>
         <scriptSourceDirectory>src/main/scripts</scriptSourceDirectory>
@@ -60,7 +60,7 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-        </plugins>
+          </plugins>
     </build>
     <dependencyManagement>
         <dependencies>
@@ -165,12 +165,12 @@
         </dependency>
     </dependencies>
     <modules>
-        <module>../model</module>
-        <module>../common</module>
-        <module>../persistence</module>
-        <module>../service</module>
-        <module>../cucumber-service</module>
-        <module>../client</module>
-        <module>../Testing</module>
+        <module>model</module>
+        <module>common</module>
+        <module>persistence</module>
+        <module>service</module>
+        <module>cucumber-service</module>
+        <module>client</module>
+        <module>Testing</module>
     </modules>
 </project>
